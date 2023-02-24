@@ -1,56 +1,26 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-  <div class="container">
-    <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="img-fluid" style="max-width: 140px;" alt=""></a>
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fa fa-bars"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav text-uppercase ml-auto">
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#services">SERVIÇOS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#portfolio">RELACIONAMENTO</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#about">PROCESSOS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#team">SOBRE NÓS</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">CONTATO</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
-
-
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
   <div class="container">
     <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="img-fluid" style="max-width: 140px;" alt=""></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
       aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-      <i class="fa fa-bars"></i>
+      MENU <i class="fa fa-bars"></i>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav text-uppercase ml-auto">
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="./index.html">HOME</a>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['']" routerLinkActive="router-link-active" >HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="./portfolio.html">RELACIONAMENTO</a>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/portfolio']" routerLinkActive="router-link-active" >RELACIONAMENTO</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="./services.html">PROCESSOS</a>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/services']" routerLinkActive="router-link-active" >PROCESSOS</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="./about.html">SOBRE NÓS</a>
+          <a class="nav-link js-scroll-trigger" [routerLink]="['/about']" routerLinkActive="router-link-active" >SOBRE NÓS</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="./contact.html">CONTATO</a>
+            <a class="nav-link js-scroll-trigger" [routerLink]="['/contact']" routerLinkActive="router-link-active" >CONTATO</a>
         </li>
       </ul>
     </div>
