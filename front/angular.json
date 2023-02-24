@@ -30,10 +30,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-              "node_modules/@fortawesome/fontawesome-free/css/all.css"
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "src/styles.scss"
             ],
             "scripts": [
               "src/vendor/jquery/jquery.min.js",
@@ -104,10 +104,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-              "node_modules/@fortawesome/fontawesome-free/css/all.css"
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "src/styles.scss"
             ],
             "scripts": [
               "src/vendor/jquery/jquery.min.js",
