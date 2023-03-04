@@ -7,22 +7,20 @@
       <div class="container">
 
         <div class="row">
-          <div class="col-5 col-md-5 form-group">
-            <select class="form-control" name="uf" id="uf" >
-              <option [value]="0">(Selecione)</option>
-              <option *ngFor="let cidade of cidades" [value]="cidade.uf">{{cidade.nome}}</option>
+          <div class="col-5 col-md-5 col-sm-12 form-group" style="margin-bottom: 15px;">
+            <select class="form-control" name="uf" id="uf" [(ngModel)]="formData.idState" (ngModelChange)="listCompaniesCitiesByUf(formData.idState)">
+              <option [value]="null" selected disabled>(Selecione o Estado)</option>
+              <option *ngFor="let state of states" [value]="state.idState">{{state.name}}</option>
             </select>
           </div>
-          <div class="col-5 col-md-5">
-            <select class="form-control" name="cidade" id="cidade">
-              <option value="0">(Selecione)</option>
-              <option value="1">Cidade 1</option>
-              <option value="2">Cidade 2</option>
-              <option value="3">Cidade 3</option>
+          <div class="col-5 col-md-5 col-sm-12">
+            <select class="form-control" name="city" id="city" [(ngModel)]="formData.idCity">
+              <option [value]="null" selected disabled>(Selecione a Cidade)</option>
+              <option *ngFor="let city of cities" [value]="city.idCity">{{city.name}}</option>
             </select>
           </div>
-          <div class="col-2 col-md-2 pull-left" >
-            <button class="butao btn btn-primary js-scroll-trigger" ><i class="fa fa-search"></i> BUSCAR</button>
+          <div class="col-2 col-md-2 col-sm-12 pull-left" >
+            <button class="butao btn btn-primary js-scroll-trigger" (click)="onChooseCity()" ><i class="fa fa-search"></i> BUSCAR</button>
           </div>
         </div>
       </div>

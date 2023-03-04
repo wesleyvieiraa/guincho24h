@@ -1,41 +1,64 @@
-import { Component } from '@angular/core';
+import { City } from './../_models/cities.model';
+import { State } from '../_models/states.model';
+import { HomeService } from './home.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
-  cidades = [
-    { uf: "AC", nome: "Acre" },
-    { uf: "AL", nome: "Alagoas" },
-    { uf: "AP", nome: "Amapá" },
-    { uf: "AM", nome: "Amazonas" },
-    { uf: "BA", nome: "Bahia" },
-    { uf: "CE", nome: "Ceará" },
-    { uf: "DF", nome: "Distrito Federal" },
-    { uf: "ES", nome: "Espírito Santo" },
-    { uf: "GO", nome: "Goiás" },
-    { uf: "MA", nome: "Maranhão" },
-    { uf: "MT", nome: "Mato Grosso" },
-    { uf: "MS", nome: "Mato Grosso do Sul" },
-    { uf: "MG", nome: "Minas Gerais" },
-    { uf: "PA", nome: "Pará" },
-    { uf: "PB", nome: "Paraíba" },
-    { uf: "PR", nome: "Paraná" },
-    { uf: "PE", nome: "Pernambuco" },
-    { uf: "PI", nome: "Piauí" },
-    { uf: "RJ", nome: "Rio de Janeiro" },
-    { uf: "RN", nome: "Rio Grande do Norte" },
-    { uf: "RS", nome: "Rio Grande do Sul" },
-    { uf: "RO", nome: "Rondônia" },
-    { uf: "RR", nome: "Roraima" },
-    { uf: "SC", nome: "Santa Catarina" },
-    { uf: "SP", nome: "São Paulo" },
-    { uf: "SE", nome: "Sergipe" },
-    { uf: "TO", nome: "Tocantins" },
-  ];
+  
+  loading: boolean = false;
+  states: State[] = [];
+  cities: City[] = [];
 
+  formData = {
+    idState: null,
+    idCity: null,
+  };
 
+  constructor (
+    private homeService: HomeService,
+    private router: Router
+  ) { }
+
+  ngOnInit(): void {
+    this.loadCompaniesStatesList();
+  }
+
+  loadCompaniesStatesList() {
+    this.loading = true;
+    this.homeService.listCompaniesStates().subscribe(
+      response => {
+        this.states = response.states;
+        this.loading = false;
+      }, fail => {
+        // this.messageService.alert('Ocorreu um ou mais erros', "Erro ao carregar as categorias e-commerce.");
+        this.loading = false;
+      }
+    ); 
+  }
+
+  listCompaniesCitiesByUf(idUf: any) {
+    this.loading = true;
+    this.homeService.listCompaniesCitiesByUf(idUf).subscribe(
+      response => {
+        this.cities = response.cities;
+        this.loading = false;
+      }, fail => {
+        // this.messageService.alert('Ocorreu um ou mais erros', "Erro ao carregar as categorias e-commerce.");
+        this.loading = false;
+      }
+    );
+  }
+
+  onChooseCity() {
+    this.router.navigate(
+      ['/portfolio/' + this.formData.idCity],
+    );
+  }
 }
