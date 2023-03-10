@@ -19,6 +19,7 @@ class AppController {
   }
 
   routes() {
+    this.express.use("/api/v1/teste", require("./modules/teste/teste-routes"));
     this.express.use("/api/v1/states", require("./modules/state/state-routes"));
     this.express.use("/api/v1/cities", require("./modules/city/city-routes"));
     this.express.use("/api/v1/companies", require("./modules/company/company-routes"));
