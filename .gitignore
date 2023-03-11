@@ -2,6 +2,7 @@ node_modules
 front/node_modules
 front/.vscode
 front/.angular
+front/dist
 
 .vscode
 .angular
