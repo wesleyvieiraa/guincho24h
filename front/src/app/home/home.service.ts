@@ -4,7 +4,7 @@ import { State } from '../_models/states.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { environment } from '../../environments/environments';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
