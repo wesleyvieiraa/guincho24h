@@ -1,10 +1,13 @@
+// MDB SCSS
+@import "mdb-angular-ui-kit/assets/scss/mdb.scss";
+
 // Core variables and mixins
 @import "./_variables";
 @import "./_mixins";
 // Global CSS
 @import "./_global.scss";
 // Components
-@import "./_navbar";
+// @import "./_navbar";
 @import "./_masthead";
 @import "./_services";
 @import "./_portfolio";

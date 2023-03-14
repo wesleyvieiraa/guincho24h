@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 
 
 const routes: Routes = [
@@ -41,6 +42,7 @@ const routes: Routes = [
     HttpClientModule,
     FormsModule,
     ModalModule.forRoot(),
+    MdbCollapseModule
   ],
   providers: [],
   bootstrap: [AppComponent],
