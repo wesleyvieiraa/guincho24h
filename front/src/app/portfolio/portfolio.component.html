@@ -39,7 +39,7 @@
             <div class="modal-body">
               <h2 class="text-uppercase">{{company.name}}</h2>
               <!-- <p class="item-intro text-muted">Alguma frase sobre o Zezinho</p> -->
-              <img class="img-fluid d-block mx-auto" src="{{(company.idCompany != 0) ? '../../assets/images/'+company.image.path+'/'+company.image.fileName : '#'}}" alt="">
+              <img class="img-fluid d-block mx-auto" src="{{(company.idCompany != 0) ? '../../assets/images/'+company.image.path+'/'+company.image.fileName : ''}}" alt="">
               <p class="item-intro text-muted">Entre em contato com {{company.name}}</p>
               <br>
               <button class="btn btn-primary" (click)="generateWhatsAppLink(company.phone)" type="button">
