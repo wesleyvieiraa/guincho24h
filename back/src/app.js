@@ -24,6 +24,11 @@ class AppController {
     this.express.use("/api/v1/cities", require("./modules/city/city-routes"));
     this.express.use("/api/v1/companies", require("./modules/company/company-routes"));
     this.express.use("/api/v1/sendmessage", require("./modules/message-service/message-service-routes"));
+    this.express.use(express.static(process.cwd() + "/dist-front"));
+    /** Angular */
+    this.express.get('/*', (request, response) => {
+      response.sendFile(process.cwd() + "/dist-front/index.html");
+    });
   }
 
 }

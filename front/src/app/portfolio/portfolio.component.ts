@@ -25,7 +25,6 @@ export class PortfolioComponent implements OnInit {
     phone: ''
   };
   loading: boolean = false;
-  path = '../../assets/images/ponta-grossa/guincho-02.jpg'
 
   constructor(
     private portfolioService: PortfolioService,
@@ -39,9 +38,9 @@ export class PortfolioComponent implements OnInit {
   loadCompanies() {
     this.loading = true;
 
-    const routeParams = this.route.snapshot.paramMap;
-    const idCity = Number(routeParams.get('idCity'));
-    
+    const queryParam = this.route.snapshot.queryParamMap;
+    const idCity = Number(queryParam.get('idCity'));
+
     this.portfolioService.listCompaniesByCity(idCity).subscribe(
       response => {
         this.companies = response.companies;

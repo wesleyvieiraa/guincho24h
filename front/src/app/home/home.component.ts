@@ -57,8 +57,11 @@ export class HomeComponent implements OnInit {
   }
 
   onChooseCity() {
-    this.router.navigate(
-      ['/portfolio/' + this.formData.idCity],
+    
+    if (!this.formData.idCity) return;
+
+    this.router.navigateByUrl(
+      `/portfolio?idCity=${this.formData.idCity}`,
     );
   }
 }
