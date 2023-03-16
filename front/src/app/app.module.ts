@@ -19,11 +19,11 @@ import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'portfolio', redirectTo: '', pathMatch: 'full' },
-  { path: 'portfolio/:idCity', component: PortfolioComponent },
+  { path: 'portfolio', component: PortfolioComponent },
   { path: 'services', component: ServicesComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 
 @NgModule({
