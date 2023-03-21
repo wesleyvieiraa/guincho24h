@@ -8,7 +8,7 @@
     </div>
     <div class="row">
       <div class="col-12 col-sm-6 col-md-4 portfolio-item" *ngFor="let company of companies">
-        <a class="portfolio-link" data-toggle="modal" data-toggle="modal" data-target="#portfolioModal" (click)="onClickCompany(company)">
+        <a class="portfolio-link" data-bs-toggle="modal" data-bs-target="#portfolioModal" (click)="onClickCompany(company)">
           <div class="portfolio-hover">
             <div class="portfolio-hover-content">
               <i class="fa fa-plus fa-3x"></i>
@@ -28,7 +28,7 @@
 <div class="portfolio-modal modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="close-modal" data-dismiss="modal">
+      <div class="close-modal" data-bs-dismiss="modal">
         <div class="lr">
           <div class="rl"></div>
         </div>
@@ -45,9 +45,9 @@
               <button class="btn btn-primary" (click)="generateWhatsAppLink(company.phone)" type="button">
                 <i class="fa fa-paper-plane"></i> Enviar Mensagem
               </button>
-              <button class="btn btn-primary"  type="button" style="margin-left: 20px;">
+              <button class="btn btn-primary" type="button" (click)="makeCall(company.phone)" *ngIf="isMobile()">
                 <i class="fa-solid fa-phone"></i> Ligue Agora
-              </button>
+             </button>             
             </div>
           </div>
         </div>
