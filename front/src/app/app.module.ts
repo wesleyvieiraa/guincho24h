@@ -1,7 +1,7 @@
 import { PortfolioModalComponent } from './portfolio-modal/portfolio-modal.component';
 import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
-import { ServicesComponent } from './services/services.component';
+import { ServicesComponent } from './servicos/services.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
